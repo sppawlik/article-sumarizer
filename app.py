@@ -3,7 +3,7 @@ from openai import OpenAI
 
 from tools import scrape_text_from_html, summarize_text_with_openai
 
-client = OpenAI(api_key='sk-proj-5sGwuWxoZbHibNynGZ5kT3BlbkFJW8moevSr9Yaw1nl8lcA4')
+client = OpenAI()
 from langchain_openai import ChatOpenAI
 
 llm = ChatOpenAI(temperature=0, model="gpt-4o")
