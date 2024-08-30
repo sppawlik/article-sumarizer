@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from openai import OpenAI
 
-client = OpenAI(api_key='sk-proj-5sGwuWxoZbHibNynGZ5kT3BlbkFJW8moevSr9Yaw1nl8lcA4')
+client = OpenAI()
 
 
 # Set your OpenAI API key here

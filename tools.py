@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 from openai import OpenAI
 
-client = OpenAI(api_key='sk-proj-5sGwuWxoZbHibNynGZ5kT3BlbkFJW8moevSr9Yaw1nl8lcA4')
+client = OpenAI()
 
 
 def scrape_text_from_html(url):
@@ -23,7 +23,7 @@ def scrape_text_from_html(url):
 def summarize_text_with_openai(text, max_tokens=1000):
     # Use the OpenAI API to generate a summary of the text
     response = client.chat.completions.create(model="gpt-4o",
-                                              messages=[{"role": "system", "content": "summarize the text"},
+                                              messages=[{"role": "system", "content": "Summarize the text, preferably in bullet points (try not more then 5 points)"},
                                                         {"role": "user", "content": text}],
                                               )
     summary = response.choices[0].message.content
